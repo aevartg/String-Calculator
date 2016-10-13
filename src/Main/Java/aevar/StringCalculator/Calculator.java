@@ -8,7 +8,7 @@ public class Calculator
 		{
 			return 0;
 		}
-		else if(number.contains(","))
+		else if(number.contains(",") || number.contains("\n"))
 		{
 			return sum(split(number));
 		}
@@ -23,7 +23,8 @@ public class Calculator
 
 	private static String[] split(String numbers)
 	{
-		return numbers.split(",");
+
+		return numbers.split("\\W+");
 	}
 
 	private static int sum(String[] numbers)
