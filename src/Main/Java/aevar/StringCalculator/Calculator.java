@@ -4,6 +4,11 @@ public class Calculator
 {
 	public static int add(String number)
 	{
-		return 0;
+		if(number.equals(""))
+		{
+			return 0;
+		}
+		else
+			return 1;
 	}
 }
