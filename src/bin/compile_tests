@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ ! -d src/klasar ]; then
+  mkdir src/klasar
+fi
+
+#on linux
+javac -classpath "src/klasar/:lib/junit-4.12.jar" src/Test/Java/aevar/StringCalculator/*.java -d src/klasar
+#on windows
+#javac -classpath "classes;lib\junit-4.11.jar" src/test/java/is/ru/stringcalculator/*.java -d classes

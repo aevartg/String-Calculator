@@ -1,0 +1,5 @@
+#!/bin/bash
+if [ ! -d src/klasar ]; then 
+  mkdir src/klasar 
+fi
+javac src/Main/Java/aevar/StringCalculator/*.java -d src/klasar
