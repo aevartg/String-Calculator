@@ -1,5 +1,9 @@
-Package aevar.StringCalculator;
+package aevar.StringCalculator;
 
-Public Class Calculator {
-	
+public class Calculator 
+{
+	public static int add(String number)
+	{
+		return 0;
+	}
 }
