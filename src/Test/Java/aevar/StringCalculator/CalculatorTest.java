@@ -3,7 +3,7 @@ package aevar.StringCalculator;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class CalculatorTest 
+public class CalculatorTest
 {
 	@Test
 	public void testEmptyString()
@@ -33,5 +33,16 @@ public class CalculatorTest
 	public void testNewlineNumbers()
 	{
 		assertEquals(6,Calculator.add("1\n2,3"));
+	}
+
+	@Test
+	public void testNegativeNumbers()
+	{
+		try {
+			Calculator.add("-1,2,3");
+
+		} catch (IllegalArgumentException e) {
+			assertEquals("Negatives not allowed: -1", e.getMessage());
+		}
 	}
 }

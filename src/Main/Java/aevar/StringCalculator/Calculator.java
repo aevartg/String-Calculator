@@ -1,6 +1,9 @@
 package aevar.StringCalculator;
 
-public class Calculator 
+import java.util.*;
+import java.io.*;
+
+public class Calculator
 {
 	public static int add(String number)
 	{
@@ -8,9 +11,13 @@ public class Calculator
 		{
 			return 0;
 		}
+		else if (number.contains("-"))
+		{
+			throw new IllegalArgumentException("Negatives not allowed: " + getNegative(number));
+		}
 		else if(number.contains(",") || number.contains("\n"))
 		{
-			return sum(split(number));
+			return sum(splitt(number));
 		}
 		else
 			return 1;
@@ -21,10 +28,10 @@ public class Calculator
 		return Integer.parseInt(number);
 	}
 
-	private static String[] split(String numbers)
+	private static String[] splitt(String numbers)
 	{
-
-		return numbers.split("\\W+");
+		numbers = numbers.replaceAll("[\\\n]", ",");
+		return numbers.split(",");
 	}
 
 	private static int sum(String[] numbers)
@@ -35,5 +42,16 @@ public class Calculator
 			total = total + toInt(number);
 		}
 		return total;
+	}
+
+	private static String getNegative(String number)
+	{
+		String empty = "";
+		String[] split = splitt(number);
+		for( String num : split ) {
+			if (num.charAt(0) == '-')
+				empty += num;
+		}
+		return empty;
 	}
 }
