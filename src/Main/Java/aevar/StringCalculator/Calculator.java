@@ -32,6 +32,7 @@ public class Calculator
 	private static String[] splitt(String numbers)
 	{
 		numbers = numbers.replaceAll("[\\\n]", ",");
+		numbers = numbers.replaceAll(" ", "");
 		return numbers.split(",");
 	}
 
@@ -40,6 +41,10 @@ public class Calculator
 		int total = 0;
 		for(String number : numbers)
 		{
+			if(toInt(number) > 1000)
+			{
+				number = "0";
+			}
 			total = total + toInt(number);
 		}
 		return total;
