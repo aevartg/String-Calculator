@@ -39,10 +39,10 @@ public class CalculatorTest
 	public void testNegativeNumbers()
 	{
 		try {
-			Calculator.add("-1,2,3");
+			Calculator.add("1,-2,3,-5");
 
 		} catch (IllegalArgumentException e) {
-			assertEquals("Negatives not allowed: -1", e.getMessage());
+			assertEquals("Negatives not allowed: -2, -5", e.getMessage());
 		}
 	}
 }

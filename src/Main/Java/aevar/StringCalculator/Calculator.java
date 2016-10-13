@@ -13,7 +13,8 @@ public class Calculator
 		}
 		else if (number.contains("-"))
 		{
-			throw new IllegalArgumentException("Negatives not allowed: " + getNegative(number));
+			String tala = getNegative((number));
+			throw new IllegalArgumentException("Negatives not allowed: " + tala);
 		}
 		else if(number.contains(",") || number.contains("\n"))
 		{
@@ -47,10 +48,15 @@ public class Calculator
 	private static String getNegative(String number)
 	{
 		String empty = "";
+		String kommapunktur = ", ";
 		String[] split = splitt(number);
 		for( String num : split ) {
 			if (num.charAt(0) == '-')
-				empty += num;
+				empty += num + kommapunktur;
+		}
+		if(empty.endsWith(", "))
+		{
+			empty = empty.substring(0, empty.length() - 2);
 		}
 		return empty;
 	}
