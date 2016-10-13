@@ -11,7 +11,7 @@ public class Calculator
 		else if (number.contains(","))
 		{
 			String[] numbers = number.split(",");
-			return Integer.toInt(numbers[0]) + Integer.toInt(numbers[1]);
+			return toInt(numbers[0]) + toInt(numbers[1]);
 		}
 		else
 			return 1;
