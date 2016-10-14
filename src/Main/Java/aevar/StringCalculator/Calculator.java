@@ -31,9 +31,15 @@ public class Calculator
 
 	private static String[] splitt(String numbers)
 	{
-		numbers = numbers.replaceAll("[\\\n]", ",");
+		String delimeter = (",|\n");
+		if(numbers.startsWith("//"))
+		{
+			String[] fyrri = numbers.split("\n",2);
+			delimeter = fyrri[0].substring(2);
+			numbers = fyrri[1];
+		}
 		numbers = numbers.replaceAll(" ", "");
-		return numbers.split(",");
+		return numbers.split(delimeter);
 	}
 
 	private static int sum(String[] numbers)

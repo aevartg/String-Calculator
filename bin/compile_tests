@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ ! -d src/klasar ]; then
-  mkdir src/klasar
+if [ ! -d /Users/aevartg/GitHub/String-Calculator/src/klasar ]; then
+  mkdir /Users/aevartg/GitHub/String-Calculator/src/klasar
 fi
 
 #on linux

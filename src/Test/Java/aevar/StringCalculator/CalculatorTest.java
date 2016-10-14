@@ -51,4 +51,10 @@ public class CalculatorTest
 	{
 		assertEquals(5,Calculator.add("1333,2,3,1001"));
 	}
+
+	@Test
+	public void testOtherDelimeters()
+	{
+		assertEquals(5,Calculator.add("//L\n2L3L1001"));
+	}
 }
